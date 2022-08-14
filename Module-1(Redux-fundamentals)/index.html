@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redux Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"></script>
+  </head>
+  <body>
+    <div class="flex justify-center items-center h-screen bg-gray-100">
+      <div
+        class="text-2xl flex bg-white flex-col space-y-20 shadow w-2/6 h-2/3 items-center justify-center rounded"
+      >
+        <div class="flex space-x-4">
+          <button
+            class="text-lg font-semibold bg-sky-400 text-white py-2 px-3 rounded"
+            id="increase"
+          >
+            Increase
+          </button>
+          <h1 id="counter"></h1>
+          <button
+            class="text-lg font-semibold bg-red-300 text-white py-2 px-3 rounded"
+            id="decrease"
+          >
+            Decrease
+          </button>
+        </div>
+
+        <!-- Increase value by 10 and decrease by 2 -->
+        <div class="space-x-4">
+          <button
+            class="text-lg font-semibold bg-blue-600 text-white py-2 px-2 rounded"
+            id="increase10"
+          >
+            Increase 10
+          </button>
+          <button
+            class="text-lg font-semibold bg-red-400 text-white py-2 px-2 rounded"
+            id="decrease2"
+          >
+            Decrease 2
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
