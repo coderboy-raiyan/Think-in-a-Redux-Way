@@ -1,20 +1,11 @@
 import { applyMiddleware, legacy_createStore as createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
+import logger from "redux-logger";
 import rootReducer from "./../rootReducer";
-
-// create Our middleware
-const myLogger = (store: any) => (next: any) => (action: any) => {
-  console.log("Before", store.getState());
-
-  const updateValue = [action].reduce(rootReducer, store.getState());
-  console.log("Upcoming ", updateValue);
-
-  return next(action);
-};
 
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(myLogger))
+  composeWithDevTools(applyMiddleware(logger))
 );
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
