@@ -1,7 +1,7 @@
 import { legacy_createStore as createStore } from "redux";
-import counterReducer from "../counter/counterReducer";
+import rootReducer from "./../rootReducer";
 
-const store = createStore(counterReducer);
+const store = createStore(rootReducer);
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
