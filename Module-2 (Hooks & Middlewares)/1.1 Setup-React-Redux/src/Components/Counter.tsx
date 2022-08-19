@@ -1,9 +1,18 @@
-import { connect } from "react-redux";
-import { Dispatch } from "redux";
+import { useDispatch, useSelector } from "react-redux";
 import { decrease, increase } from "../redux/counter/actions";
-import { InitialCounterState } from "../redux/counter/counterReducer";
+import { RootState } from "../redux/store/store";
 
-function Counter({ count, increment, decrement }: any) {
+function Counter() {
+  const count = useSelector((state: RootState) => state.value);
+  const dispatch = useDispatch();
+
+  const increment = () => {
+    dispatch(increase());
+  };
+  const decrement = () => {
+    dispatch(decrease());
+  };
+
   return (
     <div className="p-4 h-auto flex flex-col items-center justify-center space-y-5 bg-white rounded shadow">
       <div className="text-2xl font-semibold">{count}</div>
@@ -25,17 +34,5 @@ function Counter({ count, increment, decrement }: any) {
   );
 }
 
-const mapStateToProps = (state: InitialCounterState) => {
-  return {
-    count: state.value,
-  };
-};
-
-const mapDispatchToProps = (dispatch: Dispatch) => {
-  return {
-    increment: () => dispatch(increase()),
-    decrement: () => dispatch(decrease()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+//
+export default Counter;
