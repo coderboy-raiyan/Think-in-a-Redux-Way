@@ -1,11 +1,18 @@
 import { counterActionTypes } from "./actions";
 import { actionTypes } from "./actionTypes";
 
-const initialState = {
+export interface InitialCounterState {
+  value: number;
+}
+
+const initialState: InitialCounterState = {
   value: 0,
 };
 
-const counterReducer = (state = initialState, { type }: counterActionTypes) => {
+const counterReducer = (
+  state: InitialCounterState = initialState,
+  { type }: counterActionTypes
+) => {
   switch (type) {
     case actionTypes.INCREMENT:
       return {
