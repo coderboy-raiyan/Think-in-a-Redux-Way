@@ -37,7 +37,8 @@
             }
         ],
         "react/react-in-jsx-scope": 0,
-        "react/jsx-uses-react": 0
+        "react/jsx-uses-react": 0,
+        "no-shadow": 0
     },
     "settings": {
         "import/resolver": {
