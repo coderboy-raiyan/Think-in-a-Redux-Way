@@ -58,9 +58,13 @@ function Cart() {
                 {/* cart right side */}
                 <div className="xxl:col-span-4 col-span-12 sm:col-span-12 md:col-span-5 lg:col-span-4">
                     <div className="my-4 mx-4 rounded-lg bg-white py-4 px-4 shadow-md">
-                        {cartItems.map((item) => (
-                            <CartItem key={item.id} product={item} />
-                        ))}
+                        {cartItems.length ? (
+                            cartItems.map((item) => <CartItem key={item.id} product={item} />)
+                        ) : (
+                            <h1 className="text-center text-lg font-semibold text-gray-500">
+                                Cart is Empty 😭
+                            </h1>
+                        )}
                     </div>
                     <div className="flex items-center justify-center border-b pb-2 text-center">
                         <div className="text-xl font-semibold">
