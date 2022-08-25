@@ -1,26 +1,18 @@
-import {
-    IAdded,
-    IAllCompleted,
-    IClearCompleted,
-    IColorSelected,
-    IDeleted,
-    IToggled,
-    todoActionTypes,
-} from "./actionTypes";
+import { TodoActionTypes, todoActionTypes } from "./actionTypes";
 
-export const added = (todo: any): IAdded => ({
+export const added = (todo: any): TodoActionTypes => ({
     type: todoActionTypes.ADDED,
     payload: todo,
 });
 
-export const toggled = (todoId: String): IToggled => ({
+export const toggled = (todoId: String): TodoActionTypes => ({
     type: todoActionTypes.Toggled,
     payload: {
         todoId,
     },
 });
 
-export const colorSelected = (todoId: String, color: string): IColorSelected => ({
+export const colorSelected = (todoId: String, color: string): TodoActionTypes => ({
     type: todoActionTypes.COLORSELECTED,
     payload: {
         todoId,
@@ -28,17 +20,17 @@ export const colorSelected = (todoId: String, color: string): IColorSelected => 
     },
 });
 
-export const deleted = (todoId: String): IDeleted => ({
+export const deleted = (todoId: String): TodoActionTypes => ({
     type: todoActionTypes.DELETED,
     payload: {
         todoId,
     },
 });
 
-export const allCompleted = (): IAllCompleted => ({
+export const allCompleted = (): TodoActionTypes => ({
     type: todoActionTypes.ALLCOMPLETED,
 });
 
-export const clearCompleted = (): IClearCompleted => ({
+export const clearCompleted = (): TodoActionTypes => ({
     type: todoActionTypes.CLEARCOMPLETED,
 });

@@ -42,3 +42,11 @@ export interface IAllCompleted {
 export interface IClearCompleted {
     type: todoActionTypes.CLEARCOMPLETED;
 }
+
+export type TodoActionTypes =
+    | IAdded
+    | IToggled
+    | IColorSelected
+    | IDeleted
+    | IAllCompleted
+    | IClearCompleted;
