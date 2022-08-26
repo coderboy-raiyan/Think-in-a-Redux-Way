@@ -38,9 +38,11 @@ export interface IDeleted {
 
 export interface IAllCompleted {
     type: todoActionTypes.ALLCOMPLETED;
+    payload?: {};
 }
 export interface IClearCompleted {
     type: todoActionTypes.CLEARCOMPLETED;
+    payload?: {};
 }
 
 export type TodoActionTypes =
